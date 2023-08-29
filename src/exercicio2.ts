@@ -5,27 +5,17 @@ class X {
 }
 class Y extends X {
   dois(): void {
+    super.um();
     console.log("dois");
   }
+}
 
-  constructor() {
-    super();
-  }
-
-  um(): void {
-    super.um();
+class Z extends Y {
+  tres(): void {
+    super.dois();
+    console.log("tres");
   }
 }
-class Z extends Y {
-    tres(): void {
-      console.log("tres");
-    }
-  
-    constructor() {
-      super();
-    }
-  
-    dois(): void {
-      super.dois();
-    }
-  }
+
+const z = new Z();
+z.tres();
